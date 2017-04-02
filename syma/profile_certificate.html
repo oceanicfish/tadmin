@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html ng-app="consoleApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>辽宁省医师执业资格审核系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../plugins/iCheck/all.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../plugins/select2/select2.min.css">
+  <!-- DatePicker -->
+  <link rel="stylesheet" href="assets/css/datepicker3.css">
+  <!-- DataTables -->
+  <!--<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">-->
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../dist/css/skins/skin-blue-light.min.css">
+  <link rel="stylesheet" href="../dist/css/syma.css">
+</head>
+<body class="hold-transition skin-blue-light">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="http://localhost/backend/dashboard.html" class="logo">
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>医师审核系统</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-envelope-o"></i>
+                      <span class="label label-info">4</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li class="header bg-aqua-active">您有4条信息</li>
+                      <li>
+                          <!-- inner menu: contains the actual data -->
+                          <ul class="menu">
+                              <li><!-- start message -->
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <img src="../dist/img/user6-128x128.jpg" class="img-circle" alt="User Image">
+                                      </div>
+                                      <h4>
+                                          哈维
+                                          <small><i class="fa fa-clock-o"></i> 5 分钟前</small>
+                                      </h4>
+                                      <p>我的身份证审核居然没通过，你的怎么样？</p>
+                                  </a>
+                              </li><!-- end message -->
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <img src="../dist/img/user7-128x128.jpg" class="img-circle" alt="User Image">
+                                      </div>
+                                      <h4>
+                                          王佳佳
+                                          <small><i class="fa fa-clock-o"></i> 2 小时前</small>
+                                      </h4>
+                                      <p>哈哈，我的考试通过了 <i class="fa fa-smile-o text-yellow"></i></p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <img src="../dist/img/user8-128x128.jpg" class="img-circle" alt="User Image">
+                                      </div>
+                                      <h4>
+                                          刘好人
+                                          <small><i class="fa fa-clock-o"></i> 今天</small>
+                                      </h4>
+                                      <p>《医生考试申请表》模版，这回别再写错了</p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <img src="../dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
+                                      </div>
+                                      <h4>
+                                          审核员
+                                          <small><i class="fa fa-clock-o"></i> 昨天</small>
+                                      </h4>
+                                      <p>身份证扫描件不清晰，请再发一遍</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="footer"><a href="#">查看所有消息</a></li>
+                  </ul>
+              </li>
+              <!-- Notifications: style can be found in dropdown.less -->
+              <li class="dropdown notifications-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-bell-o"></i>
+                      <span class="label label-warning">10</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li class="header bg-yellow">您有10条消息</li>
+                      <li>
+                          <!-- inner menu: contains the actual data -->
+                          <ul class="menu">
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-check-circle text-green"></i> 您的医生执业证已审核通过
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-warning text-yellow"></i> 今晚11:30-12:00系统升级，请勿使用视频功能
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-times-circle text-red"></i> 您的身份证扫描件审核没通过
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-warning text-yellow"></i> 您还没有支付审核费
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-warning text-yellow"></i> 有1个材料需要您补充
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="footer"><a href="#">查看全部</a></li>
+                  </ul>
+              </li>
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <img src="../dist/img/yangwei_160x160.jpg" class="user-image" alt="User Image">
+                      <span class="hidden-xs">杨威</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <!-- User image -->
+                      <li class="user-header bg-blue-gradient">
+                          <img src="../dist/img/yangwei_160x160.jpg" class="img-circle" alt="User Image">
+                          <p>
+                              杨威 - 主任医师
+                              <small>医大二院外科</small>
+                          </p>
+                      </li>
+                      <!-- Menu Footer-->
+                      <li class="user-footer">
+                          <div class="pull-left">
+                              <a href="#" class="btn btn-default btn-flat">个人设置</a>
+                          </div>
+                          <div class="pull-right">
+                              <a href="#" class="btn btn-default btn-flat">退出</a>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <ul class="sidebar-menu">
+          <li class="treeview active">
+              <a href="#">
+                  <i class="fa fa-users"></i> <span>我的资料</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="profile_basic.html"><i class="fa fa-circle-thin"></i> 基础信息</a></li>
+                  <li><a href="profile_work.html"><i class="fa fa-circle-thin"></i> 单位信息</a></li>
+                  <li><a href="profile_education.html"><i class="fa fa-circle-thin"></i> 教育信息</a></li>
+                  <li class="active"><a href="profile_certificate.html"><i class="fa fa-check-square-o"></i> 医师资格证书</a></li>
+                  <li><a href="profile_permit.html"><i class="fa fa-circle-thin"></i> 医师执业证书</a></li>
+                  <li><a href="profile_title.html"><i class="fa fa-circle-thin"></i> 职称信息</a></li>
+                  <li><a href="profile_annual.html"><i class="fa fa-circle-thin"></i> 年度考核</a></li>
+              </ul>
+          </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i> <span>统计管理</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="employees.html"><i class="fa fa-circle-thin"></i> 医师数量</a></li>
+            <li><a href="record.php"><i class="fa fa-circle-thin"></i> 分配情况</a></li>
+            <li><a href="faculty.php"><i class="fa fa-circle-thin"></i> 审核记录</a></li>
+            <!--<li><a href="#"><i class="fa fa-circle-thin"></i> Schedule</a></li>-->
+            <li><a href="assignment.php"><i class="fa fa-circle-thin"></i> 上传资料</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-gears"></i> <span>系统设置</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-thin"></i> 外部接口</a></li>
+            <li><a href="#"><i class="fa fa-circle-thin"></i> 消息管理</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="box box-solid">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">医师考试审核信息档案</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="box-group" id="accordion">
+                                <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                                <div class="panel box box-primary">
+                                    <div class="box-header with-border">
+                                        <h4 class="box-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                医师资格证书
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="box-body">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div class="form-group">
+                                                    <label class="control-label">是否有医师资格证书:&nbsp;&nbsp;</label>
+                                                    <label>
+                                                        <input type="radio" name="cert1" class="flat-red" checked>
+                                                        没有
+                                                    </label>&nbsp;&nbsp;
+                                                    <label>
+                                                        <input type="radio" name="cert1" class="flat-red">
+                                                        有
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>证书编号</label>
+                                                    <input type="text" class="form-control" placeholder="15位" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="grandDate">取得时间</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="grandDate"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>专业</label>
+                                                    <input type="text" class="form-control" placeholder="" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>类别</label>
+                                                    <select class="form-control select2" multiple="multiple" data-placeholder="可以选择多项" style="width: 100%;">
+                                                        <option>中西医结合</option>
+                                                        <option>临床</option>
+                                                        <option>执业护士</option>
+                                                        <option>中医</option>
+                                                        <option>口腔</option>
+                                                        <option>公共卫生</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                </div><!-- /.form-group -->
+
+                                            </div>
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="box-tools pull-right">
+                                                <button type="button" class="btn btn-primary">保存</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+</div><!-- ./wrapper -->
+
+<!-- jQuery 2.1.4 -->
+<script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<!-- Slimscroll -->
+<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../plugins/fastclick/fastclick.min.js"></script>
+<!-- Select2 -->
+<script src="../plugins/select2/select2.full.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="../plugins/iCheck/icheck.min.js"></script>
+<!-- DatePicker -->
+<script src="assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- DataTables -->
+<!--<script src="../plugins/datatables/jquery.dataTables.min.js"></script>-->
+<!--<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>-->
+<!-- AdminLTE App -->
+<script src="../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- Angular JS -->
+<script src="../angular/angular.min.js"></script>
+<!-- datasource -->
+<script src="../angular/consoleds.js"></script>
+<!-- custome page directive -->
+<script src="../angular/custom-page.js"></script>
+<script src="assets/js/profile.js"></script>
+</body>
+</html>

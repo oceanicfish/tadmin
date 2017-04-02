@@ -1,0 +1,22 @@
+.logo-container .brand{
+    /*font-size: 18px;*/
+    /*color: #FFFFFF;*/
+    /*line-height: 20px;*/
+    /*float: left;*/
+    /*margin-left: 10px;*/
+    /*margin-top: 10px;*/
+    width: 120px
+}
+
+.wizard-card {
+    max-height: 800px;
+    overflow: scroll;
+}
+
+.image-container {
+    overflow: hidden;
+}
+
+.register-form {
+    padding-bottom: 5px;
+}

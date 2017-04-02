@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html ng-app="consoleApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>辽宁省医师执业资格审核系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../plugins/select2/select2.min.css">
+  <!-- DataTables -->
+  <!--<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">-->
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../dist/css/skins/skin-blue-light.min.css">
+  <link rel="stylesheet" href="../dist/css/syma.css">
+</head>
+<body class="hold-transition skin-blue-light sidebar-collapse">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="http://localhost/backend/dashboard.html" class="logo">
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>医师审核系统</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-envelope-o"></i>
+                      <span class="label label-info">4</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li class="header bg-aqua-active">您有4条信息</li>
+                      <li>
+                          <!-- inner menu: contains the actual data -->
+                          <ul class="menu">
+                              <li><!-- start message -->
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <img src="../dist/img/user6-128x128.jpg" class="img-circle" alt="User Image">
+                                      </div>
+                                      <h4>
+                                          哈维
+                                          <small><i class="fa fa-clock-o"></i> 5 分钟前</small>
+                                      </h4>
+                                      <p>我的身份证审核居然没通过，你的怎么样？</p>
+                                  </a>
+                              </li><!-- end message -->
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <img src="../dist/img/user7-128x128.jpg" class="img-circle" alt="User Image">
+                                      </div>
+                                      <h4>
+                                          王佳佳
+                                          <small><i class="fa fa-clock-o"></i> 2 小时前</small>
+                                      </h4>
+                                      <p>哈哈，我的考试通过了 <i class="fa fa-smile-o text-yellow"></i></p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <img src="../dist/img/user8-128x128.jpg" class="img-circle" alt="User Image">
+                                      </div>
+                                      <h4>
+                                          刘好人
+                                          <small><i class="fa fa-clock-o"></i> 今天</small>
+                                      </h4>
+                                      <p>《医生考试申请表》模版，这回别再写错了</p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <img src="../dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
+                                      </div>
+                                      <h4>
+                                          审核员
+                                          <small><i class="fa fa-clock-o"></i> 昨天</small>
+                                      </h4>
+                                      <p>身份证扫描件不清晰，请再发一遍</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="footer"><a href="#">查看所有消息</a></li>
+                  </ul>
+              </li>
+              <!-- Notifications: style can be found in dropdown.less -->
+              <li class="dropdown notifications-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-bell-o"></i>
+                      <span class="label label-warning">10</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li class="header bg-yellow">您有10条消息</li>
+                      <li>
+                          <!-- inner menu: contains the actual data -->
+                          <ul class="menu">
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-check-circle text-green"></i> 您的医生执业证已审核通过
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-warning text-yellow"></i> 今晚11:30-12:00系统升级，请勿使用视频功能
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-times-circle text-red"></i> 您的身份证扫描件审核没通过
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-warning text-yellow"></i> 您还没有支付审核费
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="fa fa-warning text-yellow"></i> 有1个材料需要您补充
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="footer"><a href="#">查看全部</a></li>
+                  </ul>
+              </li>
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <img src="../dist/img/yangwei_160x160.jpg" class="user-image" alt="User Image">
+                      <span class="hidden-xs">杨威</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <!-- User image -->
+                      <li class="user-header bg-blue-gradient">
+                          <img src="../dist/img/yangwei_160x160.jpg" class="img-circle" alt="User Image">
+                          <p>
+                              杨威 - 主任医师
+                              <small>医大二院外科</small>
+                          </p>
+                      </li>
+                      <!-- Menu Footer-->
+                      <li class="user-footer">
+                          <div class="pull-left">
+                              <a href="#" class="btn btn-default btn-flat">个人设置</a>
+                          </div>
+                          <div class="pull-right">
+                              <a href="#" class="btn btn-default btn-flat">退出</a>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <ul class="sidebar-menu">
+          <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-users"></i> <span>医师审核</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="company.html"><i class="fa fa-circle-thin"></i> 待审列表</a></li>
+              </ul>
+          </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i> <span>统计管理</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="employees.html"><i class="fa fa-circle-thin"></i> 医师数量</a></li>
+            <li><a href="record.php"><i class="fa fa-circle-thin"></i> 分配情况</a></li>
+            <li><a href="faculty.php"><i class="fa fa-circle-thin"></i> 审核记录</a></li>
+            <!--<li><a href="#"><i class="fa fa-circle-thin"></i> Schedule</a></li>-->
+            <li><a href="assignment.php"><i class="fa fa-circle-thin"></i> 上传资料</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-gears"></i> <span>系统设置</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-thin"></i> 外部接口</a></li>
+            <li><a href="#"><i class="fa fa-circle-thin"></i> 消息管理</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+                <div class="col-md-3">
+
+                    <!-- Profile Image -->
+                    <div class="box box-info">
+                        <div class="box-body box-profile">
+                            <img class="profile-user-img img-responsive img-circle" src="../dist/img/yangwei_160x160.jpg" alt="User profile picture">
+                            <h3 class="profile-username text-center">杨威</h3>
+                            <p class="text-muted text-center">医大二院外科</p>
+
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <b>当前职称</b> <a class="pull-right">医师</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>待升职称</b> <a class="pull-right">主任医师</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>考试截止日期</b> <a class="pull-right">2016-9-10</a>
+                                </li>
+                            </ul>
+
+                            <a href="#" class="btn btn-primary btn-block"><b>上传我的资料</b></a>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+
+                    <!-- About Me Box -->
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">背景资料</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                            <strong><i class="fa fa-book margin-r-5"></i>  毕业院校</strong>
+                            <p class="text-muted">
+                                中国医科大学
+                            </p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-map-marker margin-r-5"></i> 工作单位</strong>
+                            <p class="text-muted">中国医科大学附属第二医院 － 外科手术室</p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-pencil margin-r-5"></i> 擅长</strong>
+                            <p>
+                                <span class="label label-danger">外科手术</span>
+                                <span class="label label-success">麻醉</span>
+                                <span class="label label-info">内科</span>
+                                <span class="label label-warning">神经科</span>
+                                <span class="label label-primary">皮肤科</span>
+                            </p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-file-text-o margin-r-5"></i> 自我介绍</strong>
+                            <p></p>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+                </div><!-- /.col -->
+                <div class="col-md-9">
+                    <div class="nav-tabs-custom tab-info">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#activity" data-toggle="tab">医护社区</a></li>
+                            <li><a href="#timeline" data-toggle="tab">我的消息</a></li>
+                            <li><a href="#settings" data-toggle="tab">我的档案</a></li>
+                            <li><a href="#documents" data-toggle="tab">我的文件</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="active tab-pane" id="activity">
+                                <!-- Post -->
+                                <div class="post">
+                                    <div class="user-block">
+                                        <img class="img-circle img-bordered-sm" src="../dist/img/user1-128x128.jpg" alt="user image">
+                                        <span class='username'>
+                                          <a href="#">李明 - 北京协和医院 肿瘤科</a>
+                                          <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                                        </span>
+                                        <span class='description'>今天 下午 7:30</span>
+                                    </div><!-- /.user-block -->
+                                    <p>
+                                        病例报道：中央型肺癌采用支气管内镜下电灼烧术后行肺楔形切除术
+                                        <br><br>
+                                        该患者是一位64岁的男性患者，是一位长期应用皮质醇激素的患者，
+                                        目前并发了左肺阻塞性肺炎。胸部CT检查提示左肺不张，并且左主支气管被气管内异物堵塞，
+                                        该异物发自左肺下叶。患者被诊断为肺鳞状细胞癌，TNM分期是IIB期T3N0M0。诊断明确后，
+                                        予以行支气管内镜下肿物切除术，手术采用电灼烧术，手术过程顺利...
+                                    </p>
+                                    <ul class="list-inline">
+                                        <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> 分享</a></li>
+                                        <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> 赞</a></li>
+                                        <li class="pull-right"><a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> 评论 (5)</a></li>
+                                    </ul>
+
+                                    <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                                </div><!-- /.post -->
+
+                                <!-- Post -->
+                                <div class="post clearfix">
+                                    <div class='user-block'>
+                                        <img class='img-circle img-bordered-sm' src='../dist/img/user7-128x128.jpg' alt='user image'>
+                                        <span class='username'>
+                                          <a href="#">国家医学考试网</a>
+                                          <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                                        </span>
+                                        <span class='description'>Sent you a message - 3 days ago</span>
+                                    </div><!-- /.user-block -->
+                                    <p>
+                                        国家卫生计生委医师资格考试委员会关于确定2015年医师资格考试医学综合笔试合格分数线的通知
+                                        <br><br>
+                                        各省、自治区、直辖市卫生计生委、中医（药）管理局、医师资格考试领导小组，国家医学考试中心、国家中医药管理局中医师资格认证中心：
+                                        经国家卫生计生委医师资格考试委员会2015年11月30日会议讨论决定，2015年医师资格考试医学综合笔试合格分数线为：<br>
+                                        临床执业医师：360<br>
+                                        临床执业助理医师：180<br>
+                                        口腔执业医师：358<br>
+                                        口腔执业助理医师：178...
+                                    </p>
+
+                                    <ul class="list-inline">
+                                        <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> 分享</a></li>
+                                        <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> 赞</a></li>
+                                        <li class="pull-right"><a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> 评论 (58)</a></li>
+                                    </ul>
+
+                                    <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                                </div><!-- /.post -->
+
+                                <!-- Post -->
+                                <div class="post">
+                                    <div class='user-block'>
+                                        <img class='img-circle img-bordered-sm' src='../dist/img/user6-128x128.jpg' alt='user image'>
+                                        <span class='username'>
+                                          <a href="#">安心 － 沈阳盛京医院沈北分院 院长</a>
+                                          <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                                        </span>
+                                        <span class='description'>5天前</span>
+                                    </div><!-- /.user-block -->
+                                    <p>
+                                        我们医院的新院区
+                                    </p>
+                                    <div class='row margin-bottom'>
+                                        <div class='col-sm-6'>
+                                            <img class='img-responsive' src='../dist/img/myhospital/hospital0.jpg' alt='Photo'>
+                                        </div><!-- /.col -->
+                                        <div class='col-sm-6'>
+                                            <div class='row'>
+                                                <div class='col-sm-6'>
+                                                    <img class='img-responsive' src='../dist/img/myhospital/hospital2.jpg' alt='Photo'>
+                                                    <br>
+                                                    <img class='img-responsive' src='../dist/img/myhospital/hospital3.jpg' alt='Photo'>
+                                                </div><!-- /.col -->
+                                                <div class='col-sm-6'>
+                                                    <img class='img-responsive' src='../dist/img/myhospital/hospital4.jpg' alt='Photo'>
+                                                    <br>
+                                                    <img class='img-responsive' src='../dist/img/myhospital/hospital5.jpg' alt='Photo'>
+                                                </div><!-- /.col -->
+                                            </div><!-- /.row -->
+                                        </div><!-- /.col -->
+                                    </div><!-- /.row -->
+
+                                    <ul class="list-inline">
+                                        <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> 分享</a></li>
+                                        <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> 赞</a></li>
+                                        <li class="pull-right"><a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> 评论 (5)</a></li>
+                                    </ul>
+
+                                    <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                                </div><!-- /.post -->
+                            </div><!-- /.tab-pane -->
+
+                            <div class="tab-pane" id="timeline">
+                                <!-- The timeline -->
+                                <ul class="timeline timeline-inverse">
+                                    <!-- timeline time label -->
+                                    <li class="time-label">
+                                        <span class="bg-red">
+                                          2016年7月15日
+                                        </span>
+                                    </li>
+                                    <!-- /.timeline-label -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-envelope bg-blue"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                                            <h3 class="timeline-header"><a href="#">辽宁省卫生厅医师执业证书 审核员</a> 给你发送一条消息</h3>
+                                            <div class="timeline-body">
+                                                您的身份证扫描件不清晰，请您重新上传一次。
+                                            </div>
+                                            <!--<div class="timeline-footer">-->
+                                                <!--<a class="btn btn-primary btn-xs">转发</a>-->
+                                                <!--<a class="btn btn-info btn-xs">回复</a>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-user bg-aqua"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 10:17</span>
+                                            <h3 class="timeline-header no-border"><a href="#">安心</a> 已和您建立联系</h3>
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-comments bg-yellow"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 10:08</span>
+                                            <h3 class="timeline-header"><a href="#">哈维</a> 评论了你的文章: <a href="#" class="text-blue">终于发表了</a></h3>
+                                            <div class="timeline-body">
+                                                恭喜，你的论文写的真不错！
+                                            </div>
+                                            <div class="timeline-footer">
+                                                <a class="btn btn-default btn-flat btn-xs">查看所有评论</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-pencil bg-red"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 9:05</span>
+                                            <h3 class="timeline-header"><a href="#">辽宁省医师考试中心</a> 考试通知</h3>
+                                            <div class="timeline-body">
+                                                您的医师资格考试医学综合笔试成绩为400分。 详情请登录<a href="#">全国医师资格考试网</a>查询
+                                            </div>
+                                            <!--<div class="timeline-footer">-->
+                                            <!--<a class="btn btn-primary btn-xs">转发</a>-->
+                                            <!--<a class="btn btn-info btn-xs">回复</a>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </li>
+                                    <li class="time-label">
+                                        <span class="bg-purple">
+                                          2016年7月1日
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-comments bg-yellow"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 11:20</span>
+                                            <h3 class="timeline-header"><a href="#">刘好人</a> 评论了你的文章: <a href="#" class="text-blue">医师资格考试结束了</a></h3>
+                                            <div class="timeline-body">
+                                                我觉得你准备的不错，应该能考出好成绩！
+                                            </div>
+                                            <div class="timeline-footer">
+                                                <a class="btn btn-default btn-flat btn-xs">查看所有评论</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="time-label">
+                                        <span class="bg-yellow">
+                                          2016年6月15日
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-pencil bg-red"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 9:09</span>
+                                            <h3 class="timeline-header"><a href="#">辽宁省医师考试中心</a> 考试通知</h3>
+                                            <div class="timeline-body">
+                                                您已经报名参加全国医师资格考试《医学综合笔试》科目，请在7月1日上午9:00点，持本人身份证和准考证到中国医科大学教学楼5楼考试中心参加考试。
+                                            </div>
+                                            <!--<div class="timeline-footer">-->
+                                            <!--<a class="btn btn-primary btn-xs">转发</a>-->
+                                            <!--<a class="btn btn-info btn-xs">回复</a>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </li>
+                                    <li class="time-label">
+                                        <span class="bg-blue-active">
+                                          2016年6月1日
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-envelope bg-blue"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                                            <h3 class="timeline-header"><a href="#">辽宁省卫生厅医师执业证书 审核员</a> 给你发送一条消息</h3>
+                                            <div class="timeline-body">
+                                                请您在6月20日前，参加全国医师资格考试《医学综合笔试》科目考试。（考试成绩将自动提交到医师资格审核系统）
+                                            </div>
+                                            <!--<div class="timeline-footer">-->
+                                            <!--<a class="btn btn-primary btn-xs">转发</a>-->
+                                            <!--<a class="btn btn-info btn-xs">回复</a>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <!-- timeline time label -->
+                                    <li class="time-label">
+                                        <span class="bg-green">
+                                          2016年5月27日
+                                        </span>
+                                    </li>
+                                    <!-- /.timeline-label -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-cloud-upload bg-purple"></i>
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 20:10</span>
+                                            <h3 class="timeline-header"><a href="#">你</a> 上传了新文件</h3>
+                                            <div class="timeline-body">
+                                                <img src="../dist/img/myhospital/id.jpg" alt="..." class="img-responsive">
+                                                <img src="../dist/img/myhospital/diploma.jpg" alt="..." class="img-responsive">
+                                                <img src="../dist/img/myhospital/becholor.jpg" alt="..." class="img-responsive">
+                                                <img src="../dist/img/myhospital/doctor.jpg" alt="..." class="img-responsive">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <li>
+                                        <i class="fa fa-clock-o bg-gray"></i>
+                                    </li>
+                                </ul>
+                            </div><!-- /.tab-pane -->
+
+                            <div class="tab-pane" id="settings">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="box box-info">
+                                            <div class="box-header with-border">
+                                                <h3 class="box-title">基本信息</h3>
+                                            </div>
+                                            <div class="box-body">
+                                                <div class="form-group">
+                                                    <label>姓名</label>
+                                                    <input type="text" class="form-control" placeholder="" value="杨威">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>性别</label>
+                                                    <select class="form-control select2" style="width: 100%;">
+                                                        <option selected="selected" value="Male">男</option>
+                                                        <option value="Female">女</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>年龄</label>
+                                                    <input type="text" class="form-control" placeholder="" value="36">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>当前职称</label>
+                                                    <input type="text" class="form-control" placeholder="" value="医师">
+                                                </div>
+                                            </div><!-- /.box-body -->
+                                        </div><!-- /.box -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="box box-info">
+                                            <div class="box-header with-border">
+                                                <h3 class="box-title">教育经历</h3>
+                                            </div>
+                                            <div class="box-body">
+                                                <div class="form-group">
+                                                    <label>学历</label>
+                                                    <select class="form-control select2" style="width: 100%;">
+                                                        <option selected="selected" value="Male">大专</option>
+                                                        <option value="Female">本科</option>
+                                                        <option value="Female">硕士研究生</option>
+                                                        <option value="Female">博士研究生</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>学位</label>
+                                                    <select class="form-control select2" style="width: 100%;">
+                                                        <option selected="selected" value="Male">学士</option>
+                                                        <option value="Female">硕士</option>
+                                                        <option value="Female">博士</option>
+                                                        <option value="Female">博士后</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>毕业院校</label>
+                                                    <input type="text" class="form-control" value="沈阳广播电视大学">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>所学专业</label>
+                                                    <input type="text" class="form-control" value="计算机科学">
+                                                </div>
+                                            </div>
+                                        </div><!-- /.box -->
+                                    </div>
+                                </div>
+
+                                <!-- contact information -->
+                                <div class="box box-warning">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">联系方式 (至少填写两种)</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
+                                                    <input type="text" class="form-control" placeholder="微信号码" value="59576" required>
+                                                </div>
+                                                <br>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-qq"></i></span>
+                                                    <input type="text" class="form-control" placeholder="QQ号码" value="836595">
+                                                </div>
+                                            </div><!-- /.col -->
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                    <input type="text" class="form-control" placeholder="办公室电话" value="23345678">
+                                                </div>
+                                                <br>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+                                                    <input type="text" class="form-control" placeholder="移动电话" value="13988760987">
+                                                </div>
+                                            </div><!-- /.col -->
+                                        </div><!-- /.row -->
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+
+                                <div class="box box-danger">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">工作单位信息</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>单位名称</label>
+                                                    <input type="text" class="form-control" value="中国医科大学附属第二医院">
+                                                </div>
+                                            </div><!-- /.col -->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>科室名称</label>
+                                                    <input type="text" class="form-control" value="外科手术室">
+                                                </div>
+                                            </div><!-- /.col -->
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>入职时间</label>
+                                                    <input type="text" class="form-control" value="2002年2月15日">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>职责描述</label>
+                                                    <textarea class="form-control" rows="3" placeholder="不大于500字">做外科手术</textarea>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.row -->
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+
+                                <!--More Information Section -->
+                                <div class="box box-warning">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">其他信息</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>擅长技能</label>
+                                                    <select class="form-control select2" ng-model="studentCtrl.requirement" multiple="multiple" data-placeholder="Select some skills" style="width: 100%;">
+                                                        <option>外科手术</option>
+                                                        <option>麻醉</option>
+                                                        <option>内科</option>
+                                                        <option>中医按摩</option>
+                                                        <option>胃溃疡</option>
+                                                        <option>中耳炎</option>
+                                                        <option>皮肤病</option>
+                                                        <option>骨质疏松</option>
+                                                        <option>幼儿营养</option>
+                                                        <option>肿瘤</option>
+                                                    </select>
+                                                </div><!-- /.form-group -->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>自我介绍</label>
+                                                    <textarea class="form-control" rows="3" placeholder="写点东西，向社区中其他医疗单位的朋友介绍我自己"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>备注</label>
+                                                    <textarea class="form-control" rows="3" placeholder=""></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.box-body -->
+                            </div><!-- /.tab-pane -->
+                        </div><!-- /.tab-content -->
+                        <div class="tab-pane" id="documents">
+                            <div class="box box-solid">
+                                <div class="box-body table-responsive no-padding">
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <th>文件名称</th>
+                                            <th>上传时间</th>
+                                            <th>当前状态</th>
+                                            <th class="text-center"></th>
+                                        </tr>
+                                        <tr>
+                                            <td>身份证反面</td>
+                                            <td>2016年6月2号</td>
+                                            <td><span class="label label-danger">审核未通过</span></td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <a class="btn btn-default btn-sm" ><i class="fa fa-eye"></i></a>
+                                                    <a class="btn btn-default btn-sm" ><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>学历证书</td>
+                                            <td>2016年6月2号</td>
+                                            <td><span class="label label-default">待审核</span></td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <a class="btn btn-default btn-sm" ><i class="fa fa-eye"></i></a>
+                                                    <a class="btn btn-default btn-sm" ><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>学位证书</td>
+                                            <td>2016年6月2号</td>
+                                            <td><span class="label label-default">待审核</span></td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <a class="btn btn-default btn-sm" ><i class="fa fa-eye"></i></a>
+                                                    <a class="btn btn-default btn-sm" ><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>医师执业资格证</td>
+                                            <td>2016年6月2号</td>
+                                            <td><span class="label label-info">审核通过</span></td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <a class="btn btn-default btn-sm" ><i class="fa fa-eye"></i></a>
+                                                    <a class="btn btn-default btn-sm" ><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div><!-- /.tab-pane -->
+                    </div><!-- /.nav-tabs-custom -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+</div><!-- ./wrapper -->
+
+<!-- jQuery 2.1.4 -->
+<script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<!-- Slimscroll -->
+<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../plugins/fastclick/fastclick.min.js"></script>
+<!-- Select2 -->
+<script src="../plugins/select2/select2.full.min.js"></script>
+<!-- DataTables -->
+<!--<script src="../plugins/datatables/jquery.dataTables.min.js"></script>-->
+<!--<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>-->
+<!-- AdminLTE App -->
+<script src="../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- Angular JS -->
+<script src="../angular/angular.min.js"></script>
+<!-- datasource -->
+<script src="../angular/consoleds.js"></script>
+<!-- custome page directive -->
+<script src="../angular/custom-page.js"></script>
+<script src="../dist/js/personal.js"></script>
+</body>
+</html>
